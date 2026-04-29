@@ -1,3 +1,1 @@
-**tree-layout** — A TypeScript library for tree layout algorithms.
-
-The project is scaffolded from a Vite+ starter template and is currently in its initial state with placeholder code. It's structured as a publishable npm package (ESM, MIT license) using `tsdown` for bundling and `vitest` for testing.
+**tree-layout** — TypeScript 树形布局算法库，基于 Non-Layered Tidy Tree 算法实现 5 种布局策略（rightLogical、leftLogical、downward、upward、standard），支持变尺寸节点、增量重布局，附带 Canvas 2D 交互式 Playground。

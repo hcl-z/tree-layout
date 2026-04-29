@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tree Layout Playground</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #0a0a0a;
+        color: #e0e0e0;
+        font-family: system-ui, sans-serif;
+        overflow: hidden;
+      }
+      #controls {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        gap: 16px;
+        padding: 10px 16px;
+        background: rgba(10, 10, 10, 0.95);
+        border-bottom: 1px solid #222;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      #controls label {
+        font-size: 13px;
+        color: #aaa;
+      }
+      #controls select,
+      #controls input[type="range"] {
+        background: #1a1a2a;
+        color: #e0e0e0;
+        border: 1px solid #333;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 13px;
+      }
+      #controls input[type="range"] {
+        width: 100px;
+        padding: 0;
+        accent-color: #3498db;
+      }
+      .control-group {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .val {
+        font-size: 13px;
+        color: #3498db;
+        min-width: 28px;
+        font-variant-numeric: tabular-nums;
+        text-align: right;
+      }
+      #stats {
+        position: fixed;
+        bottom: 12px;
+        right: 16px;
+        z-index: 10;
+        background: rgba(10, 10, 10, 0.9);
+        border: 1px solid #222;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-family: monospace;
+        line-height: 1.6;
+      }
+      #help {
+        position: fixed;
+        bottom: 12px;
+        left: 16px;
+        z-index: 10;
+        font-size: 11px;
+        color: #666;
+        line-height: 1.6;
+      }
+      canvas {
+        display: block;
+        cursor: grab;
+      }
+      canvas:active {
+        cursor: grabbing;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="controls">
+      <div class="control-group">
+        <label>Layout:</label>
+        <select id="layout-select">
+          <option value="rightLogical">Right Logical</option>
+          <option value="leftLogical">Left Logical</option>
+          <option value="downward" selected>Downward</option>
+          <option value="upward">Upward</option>
+          <option value="standard">Standard</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label>Nodes:</label>
+        <input type="range" id="node-slider" min="5" max="1000" value="50" />
+        <span class="val" id="node-count-display">50</span>
+      </div>
+      <div class="control-group">
+        <label>H-Gap:</label>
+        <input type="range" id="hgap-slider" min="0" max="40" value="14" />
+        <span class="val" id="hgap-display">14</span>
+      </div>
+      <div class="control-group">
+        <label>V-Gap:</label>
+        <input type="range" id="vgap-slider" min="0" max="40" value="14" />
+        <span class="val" id="vgap-display">14</span>
+      </div>
+    </div>
+    <div id="stats"></div>
+    <div id="help">Scroll to zoom · Drag to pan · Click node to collapse/expand</div>
+    <canvas id="canvas"></canvas>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

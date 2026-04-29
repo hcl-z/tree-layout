@@ -1,7 +1,7 @@
 {
   "name": "tree-layout",
   "version": "0.0.0",
-  "description": "A starter for creating a TypeScript package.",
+  "description": "A TypeScript library for tree layout algorithms with 5 layout strategies based on non-layered tidy tree",
   "homepage": "https://github.com/author/library#readme",
   "bugs": {
     "url": "https://github.com/author/library/issues"
@@ -29,7 +29,11 @@
     "test": "vp test",
     "check": "vp check",
     "prepublishOnly": "vp run build",
-    "prepare": "vp config"
+    "prepare": "vp config",
+    "dev:example": "cd example/playground && pnpm dev"
+  },
+  "dependencies": {
+    "vite": "catalog:"
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
@@ -38,8 +42,5 @@
     "typescript": "^6.0.2",
     "vite-plus": "^0.1.14"
   },
-  "packageManager": "pnpm@10.33.2",
-  "dependencies": {
-    "vite": "catalog:"
-  }
+  "packageManager": "pnpm@10.33.2"
 }
