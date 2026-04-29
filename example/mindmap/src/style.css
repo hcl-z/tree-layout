@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0a;
+  color: #e0e0e0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  overflow: hidden;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* React Flow dark theme */
+.react-flow {
+  background: #0a0a0a !important;
+}
+
+.react-flow__controls button {
+  background: #1a1a2a;
+  border-color: #333;
+  color: #e0e0e0;
+  fill: #e0e0e0;
+}
+
+.react-flow__controls button:hover {
+  background: #2a2a3a;
+}
+
+/* Custom node */
+.mindmap-node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 2px solid;
+  cursor: pointer;
+  position: relative;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.mindmap-node.root {
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.mindmap-node.selected {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.mindmap-node-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 8px;
+  user-select: none;
+}
+
+/* Collapse button */
+.collapse-btn {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1;
+  line-height: 1;
+}
+
+.collapse-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Hide handles */
+.mindmap-handle {
+  width: 1px !important;
+  height: 1px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Inline editing input */
+.mindmap-node-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e0e0e0;
+  text-align: center;
+  font-family: inherit;
+  padding: 0 4px;
+}
+
+.mindmap-node-input:focus {
+  outline: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* Editing state */
+.mindmap-node.editing {
+  border-style: dashed;
+}
+
+/* Node transition animation */
+.react-flow__node {
+  transition: transform 0.3s ease;
+}
+
+/* Node hover */
+.mindmap-node:hover {
+  filter: brightness(1.15);
+}
+
+/* MiniMap dark */
+.react-flow__minimap {
+  background: #1a1a1a !important;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+/* Toolbar */
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(10, 10, 10, 0.95);
+  border-bottom: 1px solid #222;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.toolbar label {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.toolbar select {
+  background: #1a1a2a;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.toolbar-btn {
+  background: #1a1a2a;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.toolbar-btn:hover:not(:disabled) {
+  background: #2a2a3a;
+}
+
+.toolbar-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 20px;
+  background: #333;
+}
+
+.toolbar-spacer {
+  flex: 1;
+}
+
+.toolbar-hint {
+  font-size: 11px;
+  color: #666;
+}

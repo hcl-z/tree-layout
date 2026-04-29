@@ -17,16 +17,22 @@ export function standard(root: TidyNode): TidyNode {
 
   const heights = allChildren.map((child) => computeSubtreeSpan(child));
   const total = heights.reduce((a, b) => a + b, 0);
+  const half = total / 2;
   let cum = 0;
-  let splitIndex = allChildren.length;
-  for (let i = 0; i < heights.length; i++) {
+  let bestIndex = 1;
+  let bestDiff = Infinity;
+  for (let i = 0; i < allChildren.length; i++) {
     cum += heights[i]!;
-    if (cum >= total / 2) {
-      splitIndex = i + 1;
-      break;
+    const idx = i + 1;
+    if (idx >= 1 && idx <= allChildren.length - 1) {
+      const diff = Math.abs(cum - half);
+      if (diff < bestDiff) {
+        bestDiff = diff;
+        bestIndex = idx;
+      }
     }
   }
-  splitIndex = Math.max(1, Math.min(splitIndex, allChildren.length - 1));
+  const splitIndex = bestIndex;
 
   const rightChildren = allChildren.slice(0, splitIndex);
   const leftChildren = allChildren.slice(splitIndex);
@@ -51,7 +57,7 @@ export function standard(root: TidyNode): TidyNode {
   const leftRootY = leftRoot.y;
   for (const c of leftChildren) {
     c.eachNode((n) => {
-      n.x = n.x - (leftRootX + leftRoot.width);
+      n.x = n.x - leftRootX;
       n.y = n.y - leftRootY;
     });
   }
@@ -80,6 +86,22 @@ export function standard(root: TidyNode): TidyNode {
 
   root.x = 0;
   root.y = centerY - root.height / 2;
+
+  const rootCenterY = root.y + root.height / 2;
+  const rightShiftY = rootCenterY - rightCenterY;
+  if (rightShiftY !== 0) {
+    for (const c of rightChildren)
+      c.eachNode((n) => {
+        n.y += rightShiftY;
+      });
+  }
+  const leftShiftY = rootCenterY - leftCenterY;
+  if (leftShiftY !== 0) {
+    for (const c of leftChildren)
+      c.eachNode((n) => {
+        n.y += leftShiftY;
+      });
+  }
 
   for (const c of rightChildren) c.parent = root;
   for (const c of leftChildren) c.parent = root;

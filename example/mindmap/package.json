@@ -1,0 +1,23 @@
+{
+  "name": "mindmap",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npx vite build"
+  },
+  "dependencies": {
+    "@xyflow/react": "^12",
+    "auto-tree-layout": "workspace:*",
+    "html-to-image": "^1",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4",
+    "typescript": "^6.0.2",
+    "vite": "catalog:"
+  }
+}

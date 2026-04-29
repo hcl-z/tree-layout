@@ -1,6 +1,6 @@
 {
   "name": "auto-tree-layout",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A TypeScript library for tree layout algorithms with 5 layout strategies based on non-layered tidy tree",
   "keywords": [
     "algorithm",

@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm --filter playground build",
-  "outputDirectory": "example/playground/dist",
+  "buildCommand": "pnpm --filter playground build && pnpm --filter mindmap build && node scripts/merge-examples.mjs",
+  "outputDirectory": "deploy",
   "installCommand": "pnpm install"
 }
