@@ -13,4 +13,4 @@ peerDependencyRules:
     vite: "*"
     vitest: "*"
 packages:
-  - examples/*
+  - example/*
