@@ -1,4 +1,4 @@
-import type { InputNode } from "tree-layout";
+import type { InputNode } from "auto-tree-layout";
 
 export const smallTree: InputNode = {
   id: "root",

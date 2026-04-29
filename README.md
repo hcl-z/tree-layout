@@ -1,4 +1,4 @@
-# tree-layout
+# auto-tree-layout
 
 A TypeScript library implementing 5 tree layout algorithms based on the Non-Layered Tidy Tree algorithm (van der Ploeg, 2014). Zero dependencies, O(n) time complexity, supports variable-size nodes.
 
@@ -7,13 +7,13 @@ A TypeScript library implementing 5 tree layout algorithms based on the Non-Laye
 ## Install
 
 ```bash
-pnpm add tree-layout
+pnpm add auto-tree-layout
 ```
 
 ## Usage
 
 ```typescript
-import { createTree, layout, getNodes, getEdges, getBoundingBox } from "tree-layout";
+import { createTree, layout, getNodes, getEdges, getBoundingBox } from "auto-tree-layout";
 
 const data = {
   id: "root",
@@ -80,7 +80,7 @@ interface LayoutOptions {
 Incremental relayout after toggling `collapsed`.
 
 ```typescript
-import { relayout } from "tree-layout";
+import { relayout } from "auto-tree-layout";
 
 node.data.collapsed = true;
 relayout(node, layout.downward);

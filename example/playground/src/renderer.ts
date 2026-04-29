@@ -1,4 +1,4 @@
-import type { TidyNode } from "tree-layout";
+import type { TidyNode } from "auto-tree-layout";
 
 export class Renderer {
   private canvas: HTMLCanvasElement;

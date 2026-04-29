@@ -1,5 +1,5 @@
-import { createTree, layout, getNodes, getBoundingBox } from "tree-layout";
-import type { TidyNode } from "tree-layout";
+import { createTree, layout, getNodes, getBoundingBox } from "auto-tree-layout";
+import type { TidyNode } from "auto-tree-layout";
 import { generateTree } from "./sample-data.ts";
 import { Renderer } from "./renderer.ts";
 

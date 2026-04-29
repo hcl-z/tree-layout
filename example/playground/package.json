@@ -7,7 +7,7 @@
     "build": "npx vite build"
   },
   "dependencies": {
-    "tree-layout": "workspace:*"
+    "auto-tree-layout": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^6.0.2",

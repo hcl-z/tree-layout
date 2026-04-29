@@ -34,7 +34,7 @@ importers:
 
   example/playground:
     dependencies:
-      tree-layout:
+      auto-tree-layout:
         specifier: workspace:*
         version: link:../..
     devDependencies:
